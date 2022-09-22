@@ -59,6 +59,7 @@ char    *fill_full_map(char *full_map, char *filename, t_game *game)
         idx = idx + ft_strlen(line) - 1;
         line = get_next_line(fd);
     }
+
     ret = full_map;
     free(full_map);
     full_map = NULL;
@@ -90,6 +91,8 @@ char    *read_map(char *filename, t_game *game, t_mlx *mlx, int full_size)
         return NULL;
     game->full_map[full_size] = '\0';
     game->full_map = fill_full_map(game->full_map, filename, game);
+    //game->full_map[full_size] = '\0';
+
     return (game->full_map);
 }
 
@@ -107,7 +110,8 @@ void    show_map(t_game *game, t_mlx *mlx, t_img *img)
         while (wid < game->wid)
         {
             printf("hei : %d\nwid : %d\n", hei, wid);
-            printf("hei * game->wid + wid : %c\n", game->full_map[hei*game->wid+wid]);
+            printf("%d %d\n", game->wid, game->hei);
+            printf("%s\n", game->full_map);
             if (game->full_map[hei * game->wid + wid] == '1')
             {
                 mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, img->wall, wid * 32, hei * 32);
