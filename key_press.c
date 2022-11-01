@@ -15,7 +15,7 @@
 void	move_w(t_game *game)
 {
 	game->player.directw = 1;
-	if (game->player.y < 1
+	if (game->player.y < 2
 		|| game->map[(game->player.y - 1)
 			* game->map_wid + game->player.x] == '1')
 		return ;
@@ -83,7 +83,7 @@ void	move_d(t_game *game)
 void	move_a(t_game *game)
 {
 	game->player.directa = 1;
-	if (game->player.x < 1
+	if (game->player.x < 2
 		|| game->map[game->player.y
 			* game->map_wid + game->player.x - 1] == '1')
 		return ;
