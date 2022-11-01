@@ -14,6 +14,7 @@
 
 void	show_ending(t_game *game)
 {
+	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	free(game->map);
 	ft_printf("complete!\n");
 	exit(0);
