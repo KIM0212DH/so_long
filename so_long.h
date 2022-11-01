@@ -69,7 +69,6 @@ typedef struct s_game
 
 void	game_play_init(t_game *game);
 void	img_init(t_game *game);
-void	start_place(t_player *player, int x, int y);
 int		checkopen_size(char *filename, t_game *game);
 char	*fill_map(char *map, char *filename, t_game *game);
 int		read_map(char *filename, t_game *game);
